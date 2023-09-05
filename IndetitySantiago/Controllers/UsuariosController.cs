@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using IndetitySantiago.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IndetitySantiago.Controllers
 {
@@ -19,6 +20,8 @@ namespace IndetitySantiago.Controllers
         }
 
         // GET: Usuarios
+
+        [Authorize]
         public async Task<IActionResult> Index()
         {
               return _context.Usuarios != null ? 

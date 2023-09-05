@@ -41,6 +41,7 @@ public partial class MvccrudContext : IdentityDbContext
             entity.Property(e => e.Nombre)
                 .HasMaxLength(50)
                 .IsUnicode(false);
+            base.OnModelCreating(modelBuilder);
         });
 
         OnModelCreatingPartial(modelBuilder);
